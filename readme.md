@@ -5,6 +5,22 @@
 
 > Process execution for humans
 
+## About this fork
+
+This fork provides CJS version of Execa along with ESM version.
+
+To fix following error in Node CJS projects:
+
+```
+import { constants } from 'os'
+^^^^^^
+SyntaxError: Cannot use import statement outside a module
+```
+
+See [this issue](https://github.com/sindresorhus/execa/issues/465) for reference.
+
+[Recommended way](https://jestjs.io/docs/ecmascript-modules) in the mentioned issue wasn't a solution in my case, because of Node version < 16. New `node:` scheme supported only in Node 16.
+
 ## Why
 
 This package improves [`child_process`](https://nodejs.org/api/child_process.html) methods with:
@@ -23,7 +39,11 @@ This package improves [`child_process`](https://nodejs.org/api/child_process.htm
 ## Install
 
 ```sh
-npm install execa
+# NPM
+npm install svsool/execa
+
+# Yarn
+yarn add svsool/execa
 ```
 
 ## Usage
